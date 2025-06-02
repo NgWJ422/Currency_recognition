@@ -58,11 +58,17 @@ pip install ultralytics opencv-python pillow matplotlib torch torchvision torcha
 
 ```
 Currency_recognition/
-├── models/
-│   └── best.pt           # Trained YOLOv8 weights
-├── v1.ipynb              # Jupyter notebook
-├── assets/               # (Optional) Test images/videos
-└── README.md            
+|
+├── colab/
+│   ├── train_results/         # Training results
+|   |   └──weights
+|   |      └── best.pt         # Trained Yolov8 weights
+│   ├── val_results/           # Validation results
+│   ├── test_results/           # Testing results
+│   └── currency_recognition_colab_training.ipynb    # Google Colab training notebook
+├── v1.ipynb                  # Jupyter notebook GUI implementation
+├── assets/                   # (Optional) Test images/videos
+└── README.md
 ```
 
 ---
@@ -100,7 +106,7 @@ This project was developed as part of the **BERR4743 Computer Vision and Pattern
 
 ## 🧠 Training Notes
 
-The YOLOv8 model (`best.pt`) was trained on a **custom Ringgit currency dataset** using **Google Colab** to leverage GPU acceleration. After training, the best-performing model checkpoint was downloaded and placed in the `models/` directory for local inference through the Jupyter notebook.
+The YOLOv8 model (`best.pt`) was trained on a **custom Ringgit currency dataset** using **Google Colab** to leverage GPU acceleration. After training, the best-performing model checkpoint was downloaded and placed in the `models/` directory for local inference through the Jupyter notebook. Training, validation, and testing outputs are stored in the `colab/` directory for reference.
 
 ---
 
