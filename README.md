@@ -61,15 +61,17 @@ Currency_recognition/
 |
 ├── colab/
 │   ├── train_results/         # Training results
-|   |   └──weights
-|   |      └── best.pt         # Trained Yolov8 weights
 │   ├── val_results/           # Validation results
-│   ├── test_results/           # Testing results
+│   ├── test_results/          # Testing results
 │   └── currency_recognition_colab_training.ipynb    # Google Colab training notebook
+├── models/
+│   └── best.pt               # Trained YOLOv8 weights
 ├── v1.ipynb                  # Jupyter notebook GUI implementation
 ├── assets/                   # (Optional) Test images/videos
 └── README.md
 ```
+
+> 🔍 **Note:** The `colab/` folder is for reference purposes only. It contains the notebook used for training on Google Colab with NVIDIA GPU acceleration, along with resulting training, validation, and testing outputs.
 
 ---
 
@@ -82,7 +84,7 @@ Currency_recognition/
 * A **Speak Result** button uses TTS to announce the current detection summary.
 * The first time running the GUI cell may feel laggy or unresponsive. This is due to:
 
-  * tkinter initializing the GUI thread within Jupyter,
+  * `tkinter` initializing the GUI thread within Jupyter,
   * GPU warming up and loading model weights,
   * video processing using real-time inference under limited I/O capacity.
 * The webcam preview might flip and unflip briefly as the video thread stabilizes.
@@ -106,7 +108,7 @@ This project was developed as part of the **BERR4743 Computer Vision and Pattern
 
 ## 🧠 Training Notes
 
-The YOLOv8 model (`best.pt`) was trained on a **custom Ringgit currency dataset** using **Google Colab** to leverage GPU acceleration. After training, the best-performing model checkpoint was downloaded and placed in the `models/` directory for local inference through the Jupyter notebook. Training, validation, and testing outputs are stored in the `colab/` directory for reference.
+The YOLOv8 model (`best.pt`) was trained on a **custom Ringgit currency dataset** using **Google Colab** to leverage cloud-based NVIDIA GPU acceleration. After achieving optimal performance, the entire training output folder—containing `train_results`, `val_results`, and `test_results` directories—was downloaded and placed into the `colab/` directory for reference. The `best.pt` file is located inside the `train_results` directory. Additionally, the Google Colab notebook used for training was downloaded separately and placed in the same `colab/` folder.
 
 ---
 
